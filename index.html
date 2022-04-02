@@ -1,5 +1,63 @@
-<html>
-<title> Hii Guys This Is Title</title>
-<h1>This is header </h1>
-<p> Welcome to the Paragraph this is my new para</p>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>NavBar</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="monkey.png" alt="MyOnlineMeal.com">
+        </div>
+        <ul>
+            <li class="item">Home</li>
+            <li class="item">Services</li>
+            <li class="item">Our Clients</li>
+            <li class="item">Contact Us</li>
+        </ul>
+    </nav>
+
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="1.jpg">
+        <img class="mySlides" src="2.jpg">
+        <img class="mySlides" src="3.jpg">
+        <img class="mySlides" src="4.jpg">
+        <img class="mySlides" src="5.jpg">
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+
 </html>
